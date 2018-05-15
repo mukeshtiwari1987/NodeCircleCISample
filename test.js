@@ -12,7 +12,7 @@ const browserstack = require('browserstack-local')
 const local = new browserstack.Local()
 
 var capabilities = {
-  'build': 'Docker Build',
+  'build': 'CircleCI Build',
   'browserName': 'Chrome',
   'browser_version': '66.0',
   'os': 'OS X',
