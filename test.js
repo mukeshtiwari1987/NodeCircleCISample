@@ -40,11 +40,12 @@ local.start(options, function (error) {
   driver.get('http://localhost:8080').then(function () {
     driver.findElement(webdriver.By.id('hw')).then(function () {
       driver.getTitle().then(function (title) {
-        console.log(title);
-        driver.quit();
+        console.log(title).then(function () {
+          driver.quit().then(function () {
+            process.exit(0);
+          });
+        });
       });
     });
-  });
-})
-
-process.exit(0);
+  })
+});
